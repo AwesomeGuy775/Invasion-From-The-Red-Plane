@@ -1,0 +1,11 @@
+I:\GitHub\Invasion-From-The-Red-Plane\InvasionFromTheRedPlane\bin\Debug\netstandard2.0\InvasionFromTheRedPlane.deps.json
+I:\GitHub\Invasion-From-The-Red-Plane\InvasionFromTheRedPlane\bin\Debug\netstandard2.0\InvasionFromTheRedPlane.dll
+I:\GitHub\Invasion-From-The-Red-Plane\InvasionFromTheRedPlane\bin\Debug\netstandard2.0\InvasionFromTheRedPlane.pdb
+I:\GitHub\Invasion-From-The-Red-Plane\InvasionFromTheRedPlane\obj\Debug\netstandard2.0\InvasionFromTheRedPlane.csproj.AssemblyReference.cache
+I:\GitHub\Invasion-From-The-Red-Plane\InvasionFromTheRedPlane\obj\Debug\netstandard2.0\PluginInfo.cs
+I:\GitHub\Invasion-From-The-Red-Plane\InvasionFromTheRedPlane\obj\Debug\netstandard2.0\InvasionFromTheRedPlane.GeneratedMSBuildEditorConfig.editorconfig
+I:\GitHub\Invasion-From-The-Red-Plane\InvasionFromTheRedPlane\obj\Debug\netstandard2.0\InvasionFromTheRedPlane.AssemblyInfoInputs.cache
+I:\GitHub\Invasion-From-The-Red-Plane\InvasionFromTheRedPlane\obj\Debug\netstandard2.0\InvasionFromTheRedPlane.AssemblyInfo.cs
+I:\GitHub\Invasion-From-The-Red-Plane\InvasionFromTheRedPlane\obj\Debug\netstandard2.0\InvasionFromTheRedPlane.csproj.CoreCompileInputs.cache
+I:\GitHub\Invasion-From-The-Red-Plane\InvasionFromTheRedPlane\obj\Debug\netstandard2.0\InvasionFromTheRedPlane.dll
+I:\GitHub\Invasion-From-The-Red-Plane\InvasionFromTheRedPlane\obj\Debug\netstandard2.0\InvasionFromTheRedPlane.pdb
