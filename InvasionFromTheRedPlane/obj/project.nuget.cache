@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bZFlLfsL6Wj8TpZA/QUeuQ8v+p3Eb1tpyx4XZawrFgpQWfz0PFweUVVgYWXWo2zUOXZqX5I1SX6t8xhrT98YAQ==",
+  "dgSpecHash": "PDP11IZFIaI7UsQukLqrMxWgPE0CsQg1530xqRcK7gqbuCabgeRCAUGTyMOgCaoV3HvGYQkV6uLRg1NZ8ezs+A==",
   "success": true,
   "projectFilePath": "I:\\GitHub\\Invasion-From-The-Red-Plane\\InvasionFromTheRedPlane\\InvasionFromTheRedPlane.csproj",
   "expectedPackageFiles": [
@@ -11,11 +11,17 @@
     "C:\\Users\\Matthew\\.nuget\\packages\\harmonyx\\2.7.0\\harmonyx.2.7.0.nupkg.sha512",
     "C:\\Users\\Matthew\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\Matthew\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\Matthew\\.nuget\\packages\\mmhook.ror2\\2022.4.19\\mmhook.ror2.2022.4.19.nupkg.sha512",
     "C:\\Users\\Matthew\\.nuget\\packages\\mono.cecil\\0.11.4\\mono.cecil.0.11.4.nupkg.sha512",
     "C:\\Users\\Matthew\\.nuget\\packages\\monomod.runtimedetour\\21.12.13.1\\monomod.runtimedetour.21.12.13.1.nupkg.sha512",
     "C:\\Users\\Matthew\\.nuget\\packages\\monomod.utils\\21.12.13.1\\monomod.utils.21.12.13.1.nupkg.sha512",
     "C:\\Users\\Matthew\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\Matthew\\.nuget\\packages\\r2api.contentmanagement\\1.0.1\\r2api.contentmanagement.1.0.1.nupkg.sha512",
+    "C:\\Users\\Matthew\\.nuget\\packages\\r2api.core\\5.0.12\\r2api.core.5.0.12.nupkg.sha512",
+    "C:\\Users\\Matthew\\.nuget\\packages\\r2api.items\\1.0.3\\r2api.items.1.0.3.nupkg.sha512",
+    "C:\\Users\\Matthew\\.nuget\\packages\\r2api.language\\1.0.1\\r2api.language.1.0.1.nupkg.sha512",
     "C:\\Users\\Matthew\\.nuget\\packages\\riskofrain2.gamelibs\\1.2.4.4-r.1\\riskofrain2.gamelibs.1.2.4.4-r.1.nupkg.sha512",
+    "C:\\Users\\Matthew\\.nuget\\packages\\ror2bepinexpack\\1.7.0\\ror2bepinexpack.1.7.0.nupkg.sha512",
     "C:\\Users\\Matthew\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\Matthew\\.nuget\\packages\\system.collections.nongeneric\\4.3.0\\system.collections.nongeneric.4.3.0.nupkg.sha512",
     "C:\\Users\\Matthew\\.nuget\\packages\\system.collections.specialized\\4.3.0\\system.collections.specialized.4.3.0.nupkg.sha512",
@@ -45,5 +51,16 @@
     "C:\\Users\\Matthew\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\Matthew\\.nuget\\packages\\unityengine.modules\\2019.4.37\\unityengine.modules.2019.4.37.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MMHOOK.RoR2 2022.4.19' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MMHOOK.RoR2",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }
