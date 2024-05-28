@@ -9,6 +9,7 @@ namespace InvasionFromTheRedPlane
     [BepInPlugin("com.AwesomeGuy775.Invasion-From-The-Red-Plane", "Invasion From The Red Plane", "0.0.0")]
     [BepInProcess("Risk of Rain 2.exe")]
     [BepInDependency(ItemAPI.PluginGUID)]
+    [BepInDependency(ItemDropAPI.PluginGUID)]
     [BepInDependency(LanguageAPI.PluginGUID)]
     public class RedInvasion : BaseUnityPlugin
     {
@@ -32,11 +33,11 @@ namespace InvasionFromTheRedPlane
             bloodExplosionOnHeal.pickupModelPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mystery/PickupMystery.prefab").WaitForCompletion();
             //set non-gameplay item properties
             bloodExplosionOnHeal.canRemove = true; //can be taken my printer, shrine of order, etc
-            myItemDef.hidden = false; //there will be a pickup notification
+            bloodExplosionOnHeal.hidden = false; //there will be a pickup notification
             //add item desplay rules later. for now these are null
             var bloodExplosionOnHealDisplayRules = new ItemDisplayRuleDict(null);
             //add item to R2API
-            ItemAPI.Add(new CustomItem(bloodExplosionOnHeal, bloodExplosionOnHealDisplayRules));
+            var bloodExplosionOnHealIndex = ItemAPI.Add(new CustomItem(bloodExplosionOnHeal, bloodExplosionOnHealDisplayRules));
         }
     }
 }
