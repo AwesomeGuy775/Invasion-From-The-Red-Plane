@@ -24,7 +24,7 @@ namespace Awesion.RedInvasion.Items{
         //set non-gameplay item properties
         bloodExplosionOnHeal.canRemove = true; //can be taken my printer, shrine of order, etc
         bloodExplosionOnHeal.hidden = false; //there will be a pickup notification
-        //add item desplay rules later. for now these are null
+        //add item display rules later. for now these are null
         var bloodExplosionOnHealDisplayRules = new ItemDisplayRuleDict(null);
         //add item to R2API
         var bloodExplosionOnHealIndex = ItemAPI.Add(new CustomItem(bloodExplosionOnHeal, bloodExplosionOnHealDisplayRules));
