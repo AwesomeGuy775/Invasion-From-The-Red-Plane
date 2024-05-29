@@ -13,7 +13,6 @@ namespace InvasionFromTheRedPlane
     [BepInDependency(LanguageAPI.PluginGUID)]
     public class RedInvasion : BaseUnityPlugin
     {
-        //TODO Add this somewhere private static ItemDef bloodExplosionOnHeal;
         private void Awake()
         {
             //plugin startup logic
