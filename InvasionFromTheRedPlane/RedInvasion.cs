@@ -9,7 +9,6 @@ namespace InvasionFromTheRedPlane
     [BepInPlugin("com.AwesomeGuy775.Invasion-From-The-Red-Plane", "Invasion From The Red Plane", "0.0.0")]
     [BepInProcess("Risk of Rain 2.exe")]
     [BepInDependency(ItemAPI.PluginGUID)]
-    [BepInDependency(ItemDropAPI.PluginGUID)]
     [BepInDependency(LanguageAPI.PluginGUID)]
     public class RedInvasion : BaseUnityPlugin
     {
