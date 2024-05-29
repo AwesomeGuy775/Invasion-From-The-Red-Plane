@@ -7,6 +7,8 @@ using UnityEngine.AddressableAssets;
 
 namespace Awesion.RedInvasion.Items{
     public sealed class BloodExplosionOnHeal : ItemBase{
+        //Declare
+        private static ItemDef bloodExplosionOnHeal;
         //define crimson relic
         bloodExplosionOnHeal = ScriptableObject.CreateInstance<ItemDef>();
         //language Tokens
