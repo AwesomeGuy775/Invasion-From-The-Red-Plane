@@ -1,4 +1,5 @@
-﻿using BepInEx;
+﻿using Awesion.RedInvasion.Items;
+using BepInEx;
 using R2API;
 using RoR2;
 using UnityEngine;
@@ -16,6 +17,8 @@ namespace InvasionFromTheRedPlane
         {
             //plugin startup logic
             Logger.LogInfo($"Plugin {PluginInfo.PLUGIN_GUID} is loaded!");
+            //initialize items
+            BloodExplosionOnHeal.init(); 
         }
     }
 }

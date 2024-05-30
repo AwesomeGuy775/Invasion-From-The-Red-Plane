@@ -9,12 +9,13 @@ namespace Awesion.RedInvasion.Items{
     public sealed class BloodExplosionOnHeal{
         //Declare
         private static ItemDef bloodExplosionOnHeal;
-        private void Awake() {
+        public static void init() {
             //define crimson relic
             bloodExplosionOnHeal = ScriptableObject.CreateInstance<ItemDef>();
             //language Tokens
             //do this later using this https://risk-of-thunder.github.io/R2Wiki/Mod-Creation/Assets/Localization/
             //lang tokens go here
+            bloodExplosionOnHeal.nameToken = "BLOODEXPLOSIONONHEAL_NAME";
             //set item tier
 #pragma warning disable Publicizer001
             bloodExplosionOnHeal._itemTierDef = Addressables.LoadAssetAsync<ItemTierDef>("RoR2/Base/Common/Tier2Def.asset").WaitForCompletion();
