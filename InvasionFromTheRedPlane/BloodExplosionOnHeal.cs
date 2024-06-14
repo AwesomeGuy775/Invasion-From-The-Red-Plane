@@ -1,15 +1,19 @@
 ﻿using BepInEx;
+using AwesomeGuy775.RedInvasion;
 using R2API;
 using RoR2;
 using RoR2.Items;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace Awesion.RedInvasion.Items{
+namespace AwesomeGuy775.RedInvasion.Items{
     public sealed class BloodExplosionOnHeal{
+
         //Declare
         private static ItemDef bloodExplosionOnHeal;
-        public static void init() {
+
+        //initilaize item
+        public static void init(){
             //define crimson relic
             bloodExplosionOnHeal = ScriptableObject.CreateInstance<ItemDef>();
             //language Tokens
@@ -23,13 +27,20 @@ namespace Awesion.RedInvasion.Items{
             //set item models CHANGE THESE TO ACTUAL MODELS WHEN WE HAVE THEM
             bloodExplosionOnHeal.pickupIconSprite = Addressables.LoadAssetAsync<Sprite>("RoR2/Base/Common/MiscIcons/texMysteryIcon.png").WaitForCompletion();
             bloodExplosionOnHeal.pickupModelPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Mystery/PickupMystery.prefab").WaitForCompletion();
-            //set non-gameplay item properties
+            //set item properties
             bloodExplosionOnHeal.canRemove = true; //can be taken my printer, shrine of order, etc
             bloodExplosionOnHeal.hidden = false; //there will be a pickup notification
+            bloodExplosionOnHeal.tags = new ItemTag[]{
+                ItemTag.Damage
+            };
             //add item display rules later. for now these are null
             var bloodExplosionOnHealDisplayRules = new ItemDisplayRuleDict(null);
             //add item to R2API
             var bloodExplosionOnHealIndex = ItemAPI.Add(new CustomItem(bloodExplosionOnHeal, bloodExplosionOnHealDisplayRules));
+        }
+
+        public static void countHeal(float amount){
+            
         }
     }  
 }
