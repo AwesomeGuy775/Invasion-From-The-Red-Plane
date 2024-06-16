@@ -34,7 +34,8 @@ namespace AwesomeGuy775.RedInvasion{
         private float OnHeal(On.RoR2.HealthComponent.orig_Heal orig, HealthComponent self, float amount, ProcChainMask procChainMask, bool nonRegen){
             float healedAmount = orig(self, amount, procChainMask, nonRegen);
             if (self.body && self.body.isPlayerControlled){
-                BloodExplosionOnHeal.countHeal(healedAmount);
+                float maxHealth = self.body.maxHealth;
+                BloodExplosionOnHeal.countHeal(healedAmount, maxHealth);
             }
             return healedAmount;
         }

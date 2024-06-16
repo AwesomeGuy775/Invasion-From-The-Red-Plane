@@ -38,8 +38,8 @@ namespace AwesomeGuy775.RedInvasion.Items{
             //add item to R2API
             var bloodExplosionOnHealIndex = ItemAPI.Add(new CustomItem(bloodExplosionOnHeal, bloodExplosionOnHealDisplayRules));
         }
-
-        public static void countHeal(float amount){
+        
+        public static void countHeal(float amount, float maxHealth){
             
         }
     }  
