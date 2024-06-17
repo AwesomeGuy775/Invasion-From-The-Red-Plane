@@ -10,7 +10,16 @@ namespace AwesomeGuy775.RedInvasion.Items{
     public sealed class BloodExplosionOnHeal{
 
         //Declare
-        private static ItemDef bloodExplosionOnHeal;
+        public static ItemDef bloodExplosionOnHeal;
+        //vars for items
+        private static float maxTimeForActivation = 5f;
+        private static float percentHealthForActivation = 10f/100f;
+        //Declare vars for healing logic
+        private static float accumulatedHeal = 0f;
+        private static float accumulatedTime = 0f;
+        private static float lastHealTime = -1f;
+        private static float currTime;
+        
 
         //initilaize item
         public static void init(){
@@ -19,7 +28,7 @@ namespace AwesomeGuy775.RedInvasion.Items{
             //language Tokens
             //do this later using this https://risk-of-thunder.github.io/R2Wiki/Mod-Creation/Assets/Localization/
             //lang tokens go here
-            bloodExplosionOnHeal.nameToken = "BLOODEXPLOSIONONHEAL_NAME";
+            bloodExplosionOnHeal.name = "BLOODEXPLOSIONONHEAL_NAME";
             //set item tier
 #pragma warning disable Publicizer001
             bloodExplosionOnHeal._itemTierDef = Addressables.LoadAssetAsync<ItemTierDef>("RoR2/Base/Common/Tier2Def.asset").WaitForCompletion();
@@ -34,12 +43,31 @@ namespace AwesomeGuy775.RedInvasion.Items{
                 ItemTag.Damage
             };
             //add item display rules later. for now these are null
-            var bloodExplosionOnHealDisplayRules = new ItemDisplayRuleDict(null);
+            ItemDisplayRuleDict bloodExplosionOnHealDisplayRules = new ItemDisplayRuleDict(null);
             //add item to R2API
-            var bloodExplosionOnHealIndex = ItemAPI.Add(new CustomItem(bloodExplosionOnHeal, bloodExplosionOnHealDisplayRules));
+            ItemAPI.Add(new CustomItem(bloodExplosionOnHeal, bloodExplosionOnHealDisplayRules));
         }
         
         public static void countHeal(float amount, float maxHealth){
+            currTime = Time.time;
+            if (lastHealTime == -1f){
+                lastHealTime = currTime;
+            }
+            accumulatedTime = currTime - lastHealTime;
+            if (accumulatedTime > maxTimeForActivation){
+                accumulatedTime = 0f;
+                lastHealTime = currTime;
+                accumulatedHeal = 0f;
+            }
+            accumulatedHeal += amount;
+            if (accumulatedHeal >= percentHealthForActivation*maxHealth){
+                bloodExplode();
+                accumulatedTime = 0f;
+                lastHealTime = -1f;
+                accumulatedHeal = 0f;
+            } 
+        }
+        public static void bloodExplode(){
             
         }
     }  
