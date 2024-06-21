@@ -20,7 +20,7 @@ namespace AwesomeGuy775.RedInvasion{
             //initialize items
             BloodExplosionOnHeal.init(); 
             //print that plugin is loaded
-            Logger.LogInfo($"Plugin modName is loaded!");
+            Logger.LogInfo($"Plugin {modName} is loaded!");
         }
 
         //IM HOOKING!!!!!
