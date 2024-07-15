@@ -8,17 +8,9 @@ using UnityEngine.AddressableAssets;
 
 namespace AwesomeGuy775.RedInvasion.Items{
     public sealed class BloodExplosionOnHeal{
-
         //vars for item stats
-        private static float maxTimeForActivation = 5f;
+        private static float maxTimeForActivation = 10f;
         private static float percentHealthForActivation = 10f/100f;
-
-        //vars for logic
-        private static float accumulatedHeal = 0f;
-        private static float accumulatedTime = 0f;
-        private static float lastHealTime = -1f;
-        private static float currTime;
-        
 
         //initilaize item
         public static void init(){
@@ -44,25 +36,14 @@ namespace AwesomeGuy775.RedInvasion.Items{
             ItemAPI.Add(new CustomItem(Items.bloodExplosionOnHeal, displayRules));
         }
         
-        public static void countHeal(float amount, float maxHealth){
-            currTime = Time.time;
-            if (lastHealTime == -1f){
-                lastHealTime = currTime;
-            }
-            accumulatedTime = currTime - lastHealTime;
-            if (accumulatedTime > maxTimeForActivation){
-                accumulatedTime = 0f;
-                lastHealTime = currTime;
-                accumulatedHeal = 0f;
-            }
-            accumulatedHeal += amount;
-            if (accumulatedHeal >= percentHealthForActivation*maxHealth){
+        public static void countHeal(float amount, float maxHealth, CharacterBody body){
+            Buffs.Buffs.addStacksTimed(body, (int) System.Math.Round(amount), Buffs.Buffs.countHeal, maxTimeForActivation);
+            while (body.GetBuffCount(Buffs.Buffs.countHeal.buffIndex)>=percentHealthForActivation*maxHealth){
+                Buffs.Buffs.removeStacksTimed(body, (int) System.Math.Ceiling(percentHealthForActivation*maxHealth), Buffs.Buffs.countHeal);
                 bloodExplode();
-                accumulatedTime = 0f;
-                lastHealTime = -1f;
-                accumulatedHeal = 0f;
-            } 
+            }
         }
+
         public static void bloodExplode(){
             
         }

@@ -1,4 +1,5 @@
-﻿using AwesomeGuy775.RedInvasion.Items;
+﻿using AwesomeGuy775.RedInvasion.Buffs;
+using AwesomeGuy775.RedInvasion.Items;
 using BepInEx;
 using R2API;
 using RoR2;
@@ -16,28 +17,27 @@ namespace AwesomeGuy775.RedInvasion{
         internal const string version = "0.0.0";
         public void Awake(){
             //create hooks
-            OnEnable();
-            //initialize items
-            BloodExplosionOnHeal.init(); 
+            createHooks();
+            //initialize
+            initAll();
             //print that plugin is loaded
             Logger.LogInfo($"Plugin {modName} is loaded!");
         }
 
         //IM HOOKING!!!!!
-        private void OnEnable(){
-            On.RoR2.HealthComponent.Heal += OnHeal;
+        private void createHooks(){
+            On.RoR2.HealthComponent.Heal += Hooks.OnHeal;
         }
-        private void OnDisable(){
-            On.RoR2.HealthComponent.Heal -= OnHeal;
+        private void destroyHooks(){
+            On.RoR2.HealthComponent.Heal -= Hooks.OnHeal;
         }
 
-        private float OnHeal(On.RoR2.HealthComponent.orig_Heal orig, HealthComponent self, float amount, ProcChainMask procChainMask, bool nonRegen){
-            float healedAmount = orig(self, amount, procChainMask, nonRegen);
-            if (self.body && self.body.isPlayerControlled){
-                float maxHealth = self.body.maxHealth;
-                BloodExplosionOnHeal.countHeal(healedAmount, maxHealth);
-            }
-            return healedAmount;
+        private void initAll(){
+            //init items
+            BloodExplosionOnHeal.init();
+
+            //init buffs
+            CountHeal.init();
         }
     }
 }
